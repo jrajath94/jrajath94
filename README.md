@@ -1,69 +1,61 @@
-# Hey there, I'm Rajath 👋
+# Rajath John Bosco
 
-I'm a VP and Lead Software Engineer at JPMorgan Chase in New York, where I architect AI systems that help hundreds of engineers work smarter. Before that, I built high-frequency trading systems at Goldman Sachs and worked on cool stuff at NVIDIA and Visa.
+I am a Vice President and Lead Software Engineer at JPMorgan Chase in New York. My work focuses on building AI systems that improve engineering efficiency and data accessibility. Previously, I developed high-frequency trading systems at Goldman Sachs and worked on infrastructure at NVIDIA and Visa.
 
-I'm passionate about building intelligent systems that solve real problems at scale. Whether it's processing millions of transactions per day or helping teams find the right documentation in seconds, I love the challenge of turning complex requirements into elegant solutions.
+I enjoy solving complex problems and building systems that work reliably at scale. My background spans fintech, GPU computing, and payments, where I have consistently focused on performance and optimization.
 
-## What I'm Working On
+## Work Experience
 
-Currently leading AI/ML initiatives at JPMorgan Chase, where I've built:
+**JPMorgan Chase & Co.**
+*Vice President, Lead Software Engineer*
+I currently lead AI and ML initiatives, including:
+- **Platform Documentation Intelligence**: Built a RAG system that serves over 300 engineers daily, processing thousands of documents to reduce discovery time from hours to minutes.
+- **Cloud FinOps Analytics**: Developed a text-to-SQL platform to analyze over $50M in cloud spend across AWS, Azure, and GCP, helping identify cost optimization opportunities.
+- **Knowledge Assist**: Created an enterprise chat application using hybrid retrieval to serve 300+ employees, improving information access across the organization.
 
-- **Platform Documentation Intelligence**: RAG system serving 300+ engineers daily, processing over 10,000 documents. Reduced documentation discovery time from hours to minutes using FastAPI and GPT-4o.
+**Goldman Sachs**
+*Quantitative Developer*
+- Engineered a real-time P&L calculation engine capable of processing over 150,000 daily trades with sub-millisecond latency.
+- Built a global trading data pipeline ingesting 500GB of data daily from 12 countries.
 
-- **Cloud FinOps Analytics**: Text-to-SQL platform analyzing $50M+ in cloud spend across AWS, Azure, and GCP. Uses LangChain and statistical analysis to identify cost optimization opportunities.
+**NVIDIA**
+*Software Engineering Intern*
+- Architected a serverless security pipeline for GeForce Now using AWS Lambda and S3.
+- Built predictive analytics models to optimize security service costs.
 
-- **Knowledge Assist**: Enterprise chat-based RAG application built with Streamlit, FastAPI, and LangChain. Serves 300+ employees across 2,500+ documents with hybrid retrieval for better accuracy.
+**Visa**
+*Systems Developer*
+- Redesigned machine learning training infrastructure to process millions of daily transactions efficiently.
+- Developed fraud detection systems and led Apple Pay tokenization integration across global banks.
 
-## What I've Built
+## Projects
 
-**Goldman Sachs** (Quantitative Developer, 2021-2023)
-- Engineered real-time P&L calculation engine processing 150,000+ daily trades with sub-millisecond latency
-- Built global trading data pipeline ingesting 500GB daily from 12 countries using Kafka and AWS S3
+**LLM Hedge Fund**
+A multi-agent AI trading system built with Python and PyTorch. It features modular signal generation and risk management pipelines designed for strategy optimization.
 
-**NVIDIA** (Software Engineering Intern, 2020)
-- Architected serverless security pipeline using AWS Lambda, S3, and SNS for GeForce Now
-- Built predictive analytics model for security service cost optimization
-- Migrated network log analytics to Rapids AI on NVIDIA GPUs for real-time anomaly detection
+**CoT Reasoning Framework**
+A lightweight reasoning framework inspired by DeepSeek R1. It implements self-verification and chain-of-thought capabilities using reinforcement learning techniques.
 
-**Visa** (Systems Developer, 2016-2019)
-- Redesigned ML training infrastructure processing 3M+ daily transactions, significantly reducing training cycles
-- Developed ensemble fraud detection analyzing 20M+ daily transactions with improved precision
-- Led Apple Pay tokenization integration across 20+ global banks
+**Super-Learning**
+An AI-powered tool I built to transform YouTube lectures into comprehensive study notes. It uses advanced prompting to help users retain information more effectively. [View Repository](https://github.com/jrajath94/super-learning)
 
-## Side Projects
+## Technical Skills
 
-When I'm not at work, I build things that interest me:
+- **Languages**: Python, SQL, C++, JavaScript, R, Java
+- **AI/ML**: TensorFlow, PyTorch, LangChain, FastAPI, RAG Systems, LLMs
+- **Infrastructure**: AWS, GCP, Docker, Kafka, BigQuery, Snowflake
+- **Data**: Statistical Modeling, Machine Learning, A/B Testing
 
-**LLM Hedge Fund** - Multi-agent AI trading system with modular signal generation and risk management pipelines. Built using Python and PyTorch with hexagonal architecture.
+## Education
 
-**CoT Reasoning Framework** - Lightweight reasoning framework inspired by DeepSeek R1. Implements self-verification and chain-of-thought capabilities using reinforcement learning.
+**Master of Science in Information Management**
+University of Illinois at Urbana-Champaign
 
-Check out my latest: [Super-Learning](https://github.com/jrajath94/super-learning) - An AI-powered tool that transforms YouTube lectures into comprehensive study notes using advanced prompting techniques.
+**Bachelor of Engineering in Computer Science**
+SJCE, India
 
-## Tech I Work With
-
-**Languages**: Python, SQL, C++, JavaScript, R, Java
-
-**AI/ML**: TensorFlow, PyTorch, LangChain, FastAPI, RAG Systems, LLMs (GPT-4o, Claude)
-
-**Infrastructure**: AWS, GCP, Docker, Kafka, BigQuery, Snowflake
-
-**Data**: Statistical Modeling, Machine Learning, A/B Testing, Causal Inference
-
-## Background
-
-I hold a Master's in Information Management from the University of Illinois at Urbana-Champaign (GPA: 3.7) and a Bachelor's in Computer Science from SJCE in India. 
-
-Over the past 7+ years, I've had the opportunity to work across fintech, GPU computing, and payments - always focusing on building systems that operate reliably at scale.
-
-## Let's Connect
-
-I'm always interested in discussing AI/ML applications, quantitative systems, or interesting technical challenges. Feel free to reach out:
+## Contact
 
 - LinkedIn: [linkedin.com/in/rajathj](https://www.linkedin.com/in/rajathj)
 - Email: rajathjohnbosco@gmail.com
-- Portfolio: [www.rajathjohn.com](http://www.rajathjohn.com)
-
----
-
-*Open to opportunities in Software Engineering, Data Engineering, AI/ML Engineering, and LLM Research roles.*
+- Website: [www.rajathjohn.com](http://www.rajathjohn.com)
