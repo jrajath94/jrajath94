@@ -1,8 +1,8 @@
 # Rajath John Bosco
 
-Lead Software Engineer at JPMorgan Chase, working on AI platforms for the consumer bank. Based in New York.
+Lead Software Engineer at JPMorgan Chase (AI platforms, Consumer & Community Banking). Based in New York.
 
-Most of what's here is me trying to understand LLM systems properly: why agents fail, what evaluation numbers actually mean, and how inference works down at the kernel level.
+The repos here cover LLM evaluation and reliability, GPU inference, and from-scratch implementations.
 
 The numbers below come from each repo's README, where the benchmark setup is documented.
 
