@@ -49,8 +49,27 @@ Building open-source tools for ML infrastructure, distributed systems, quantitat
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | [adversarial-prompt-suite](https://github.com/jrajath94/adversarial-prompt-suite)     | Red-teaming harness for systematic jailbreak & prompt injection testing  |
 | [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer)                           | BPE tokenizer from scratch with vocabulary analysis and merge tracking   |
-| [jax-transformer-impl](https://github.com/jrajath94/jax-transformer-impl)             | Transformer implementation in JAX/Flax with XLA-optimized training loop  |
+| [jax-transformer-impl](https://github.com/jrajath94/jax-transformer-impl)             | MHA, MQA, and GQA attention in pure functional JAX with JIT/vmap/pmap    |
 
 ---
 
-📫 jrajath94@gmail.com
+#### Research Code
+
+Experiment code and reproducibility artifacts for independent research on LLM systems.
+
+| Project                                                                                             | Description                                                              |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [paper3_failure_planning](https://github.com/jrajath94/paper3_failure_planning)                     | Failure-aware planning for LLM agents: predicting mid-execution failure from traces |
+| [stair-tts-scaling-laws](https://github.com/jrajath94/stair-tts-scaling-laws)                       | Per-problem discrete structure in test-time compute scaling              |
+| [semcp-conformal-prediction](https://github.com/jrajath94/semcp-conformal-prediction)               | Conformal prediction over semantic meaning classes for LLM outputs       |
+| [contamination-contagion](https://github.com/jrajath94/contamination-contagion)                     | How benchmark leakage propagates through fine-tuning and corrupts evals  |
+| [crisp-grokking-paper](https://github.com/jrajath94/crisp-grokking-paper)                           | Unifying grokking and neural scaling laws via phase transitions          |
+| [paper1_orchestrabench](https://github.com/jrajath94/paper1_orchestrabench)                         | Benchmarking multi-agent LLM topologies across task types                |
+
+#### Currently Building
+
+Active projects, in progress as of July 2026: [agentsla](https://github.com/jrajath94/agentsla) (SLO-aware reliability runtime for tool-calling agents), [draftforge](https://github.com/jrajath94/draftforge) (EAGLE-3 speculative-decoding draft head training), [goodputlab](https://github.com/jrajath94/goodputlab) (control plane for disaggregated LLM serving).
+
+---
+
+Contact: jrajath94@gmail.com
