@@ -1,75 +1,55 @@
-### Rajath John
+# Rajath John Bosco
 
-Building open-source tools for ML infrastructure, distributed systems, quantitative finance, and AI safety.
+I build production LLM systems and study how they fail. Lead Software Engineer (VP) at JPMorgan Chase, working on AI platforms for Consumer & Community Banking. Based in New York.
 
-**Focus areas:** LLM serving & optimization · GPU compute · consensus protocols · market microstructure · AI safety & interpretability
+The numbers below come from each repo's README, where the benchmark setup is documented.
 
----
+## GPU and inference
 
-#### LLM Infrastructure
+| Project | What it is |
+| --- | --- |
+| [attention-kernel-cuda](https://github.com/jrajath94/attention-kernel-cuda) | CUDA Flash Attention for non-standard head dimensions. Variable-block tiling recovers the 25-44% of compute that fixed-block kernels waste on padding. |
+| [triton-inference-kernels](https://github.com/jrajath94/triton-inference-kernels) | Fused softmax and Flash Attention in Triton with online softmax accumulation. 50x lower VRAM than naive attention at sequence length 2048. |
+| [model-quantization-lab](https://github.com/jrajath94/model-quantization-lab) | GPTQ vs AWQ vs GGML on Llama 2 7B. AWQ 4-bit: 4.0x compression at 10.04 perplexity. |
+| [llm-inference-benchmark](https://github.com/jrajath94/llm-inference-benchmark) | vLLM vs TGI vs TensorRT-LLM under realistic bursty traffic, not synthetic constant load. |
 
-| Project                                                                                     | Description                                                                  |
-| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [llm-inference-benchmark](https://github.com/jrajath94/llm-inference-benchmark)             | Benchmark vLLM vs TGI vs TensorRT-LLM with realistic bursty traffic patterns |
-| [attention-kernel-cuda](https://github.com/jrajath94/attention-kernel-cuda)                 | Custom CUDA Flash Attention kernel for non-standard head dimensions          |
-| [triton-inference-kernels](https://github.com/jrajath94/triton-inference-kernels)           | Fused Triton kernels for attention + FFN with autotuning for LLM serving     |
-| [distributed-rlhf-trainer](https://github.com/jrajath94/distributed-rlhf-trainer)           | Minimal distributed RLHF training loop with Ray + DeepSpeed                  |
-| [llm-eval-suite](https://github.com/jrajath94/llm-eval-suite)                               | Evaluation framework with LLM-as-judge and custom rubrics                    |
-| [token-streaming-proxy](https://github.com/jrajath94/token-streaming-proxy)                 | High-perf SSE proxy for LLM APIs with backpressure handling                  |
-| [model-quantization-lab](https://github.com/jrajath94/model-quantization-lab)               | GPTQ/AWQ/GGML quantization comparison with quality metrics                   |
-| [prompt-cache-engine](https://github.com/jrajath94/prompt-cache-engine)                     | KV-cache sharing for prompt prefix deduplication                             |
+## Evaluation and reliability
 
-#### Systems & Infrastructure
+| Project | What it is |
+| --- | --- |
+| [adversarial-prompt-suite](https://github.com/jrajath94/adversarial-prompt-suite) | Red-teaming framework that measures attack-surface coverage instead of counting jailbreaks. 6 attack categories, two-layer classifier (regex heuristics, then an LLM judge for borderline cases). |
+| [fault-tolerant-training](https://github.com/jrajath94/fault-tolerant-training) | Elastic checkpoint and recovery for distributed training on spot instances. Survived 47 preemptions across 42 days of 7B-13B runs; $31,400 saved vs on-demand. |
+| [llm-eval-suite](https://github.com/jrajath94/llm-eval-suite) | Evaluation framework with LLM-as-judge and custom rubrics, calibrated against human raters. |
+| [data-pipeline-monitor](https://github.com/jrajath94/data-pipeline-monitor) | ML pipeline observability with statistical drift detection (KS, chi-square, PSI). |
 
-| Project                                                                         | Description                                                          |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| [gpu-memory-profiler](https://github.com/jrajath94/gpu-memory-profiler)         | Visual GPU memory profiler with leak detection for PyTorch           |
-| [distributed-kv-store](https://github.com/jrajath94/distributed-kv-store)       | Raft-consensus KV store optimized for ML metadata                    |
-| [container-gpu-scheduler](https://github.com/jrajath94/container-gpu-scheduler) | K8s operator for GPU-aware batch scheduling with bin-packing         |
-| [data-pipeline-monitor](https://github.com/jrajath94/data-pipeline-monitor)     | Real-time ML pipeline observability with statistical drift detection |
-| [zero-copy-tensor-ipc](https://github.com/jrajath94/zero-copy-tensor-ipc)       | Zero-copy tensor sharing across processes via shared memory          |
-| [fault-tolerant-training](https://github.com/jrajath94/fault-tolerant-training) | Elastic checkpoint/recovery for distributed training jobs            |
-| [ml-feature-store](https://github.com/jrajath94/ml-feature-store)               | Point-in-time correct feature store with DuckDB + Arrow              |
+## From scratch, no dependencies
 
-#### Quantitative Finance
+| Project | What it is |
+| --- | --- |
+| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer) | BPE and WordPiece tokenizers. 151K and 536K tokens/sec, 144 tests. |
+| [jax-transformer-impl](https://github.com/jrajath94/jax-transformer-impl) | Transformer in pure functional JAX with MHA, MQA, and GQA, with verified numerical equivalence between the attention variants. |
+| [distributed-kv-store](https://github.com/jrajath94/distributed-kv-store) | Raft consensus from the paper, optimized for ML metadata workloads. |
 
-| Project                                                                                 | Description                                                            |
-| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [orderbook-simulator](https://github.com/jrajath94/orderbook-simulator)                 | High-fidelity limit order book with microstructure modeling            |
-| [alpha-signal-framework](https://github.com/jrajath94/alpha-signal-framework)           | Walk-forward backtesting with lookahead bias prevention                |
-| [real-time-risk-engine](https://github.com/jrajath94/real-time-risk-engine)             | Portfolio VaR engine with Monte Carlo simulation and Greeks            |
-| [market-data-lakehouse](https://github.com/jrajath94/market-data-lakehouse)             | High-throughput market data ingestion into columnar storage            |
-| [llm-financial-agent](https://github.com/jrajath94/llm-financial-agent)                 | Multi-agent financial analysis with hallucination detection            |
-| [low-latency-matching-engine](https://github.com/jrajath94/low-latency-matching-engine) | Price-time priority matching engine — cache-line alignment & seqlock   |
-| [polymarket-hft](https://github.com/jrajath94/polymarket-hft)                           | Prediction market HFT strategy with sub-second order execution         |
-
-#### NLP & AI Safety
-
-| Project                                                                               | Description                                                              |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| [adversarial-prompt-suite](https://github.com/jrajath94/adversarial-prompt-suite)     | Red-teaming harness for systematic jailbreak & prompt injection testing  |
-| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer)                           | BPE tokenizer from scratch with vocabulary analysis and merge tracking   |
-| [jax-transformer-impl](https://github.com/jrajath94/jax-transformer-impl)             | MHA, MQA, and GQA attention in pure functional JAX with JIT/vmap/pmap    |
-
----
-
-#### Research Code
+## Research code
 
 Experiment code and reproducibility artifacts for independent research on LLM systems.
 
-| Project                                                                                             | Description                                                              |
-| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| [paper3_failure_planning](https://github.com/jrajath94/paper3_failure_planning)                     | Failure-aware planning for LLM agents: predicting mid-execution failure from traces |
-| [stair-tts-scaling-laws](https://github.com/jrajath94/stair-tts-scaling-laws)                       | Per-problem discrete structure in test-time compute scaling              |
-| [semcp-conformal-prediction](https://github.com/jrajath94/semcp-conformal-prediction)               | Conformal prediction over semantic meaning classes for LLM outputs       |
-| [contamination-contagion](https://github.com/jrajath94/contamination-contagion)                     | How benchmark leakage propagates through fine-tuning and corrupts evals  |
-| [crisp-grokking-paper](https://github.com/jrajath94/crisp-grokking-paper)                           | Unifying grokking and neural scaling laws via phase transitions          |
-| [paper1_orchestrabench](https://github.com/jrajath94/paper1_orchestrabench)                         | Benchmarking multi-agent LLM topologies across task types                |
+| Project | Topic |
+| --- | --- |
+| [paper3_failure_planning](https://github.com/jrajath94/paper3_failure_planning) | Failure-aware planning for LLM agents: predicting mid-execution failure from traces |
+| [semcp-conformal-prediction](https://github.com/jrajath94/semcp-conformal-prediction) | Conformal prediction over semantic meaning classes for LLM outputs |
+| [contamination-contagion](https://github.com/jrajath94/contamination-contagion) | How benchmark leakage propagates through fine-tuning and corrupts evals |
+| [stair-tts-scaling-laws](https://github.com/jrajath94/stair-tts-scaling-laws) | Per-problem discrete structure in test-time compute scaling |
+| [paper1_orchestrabench](https://github.com/jrajath94/paper1_orchestrabench) | Benchmarking multi-agent LLM topologies across task types |
 
-#### Currently Building
+## In progress
 
-Active projects, in progress as of July 2026: [agentsla](https://github.com/jrajath94/agentsla) (SLO-aware reliability runtime for tool-calling agents), [draftforge](https://github.com/jrajath94/draftforge) (EAGLE-3 speculative-decoding draft head training), [goodputlab](https://github.com/jrajath94/goodputlab) (control plane for disaggregated LLM serving).
+Early-stage, active as of July 2026: [agentsla](https://github.com/jrajath94/agentsla) (SLO verification for tool-calling agents), [draftforge](https://github.com/jrajath94/draftforge) (EAGLE-3 speculative-decoding draft heads), [goodputlab](https://github.com/jrajath94/goodputlab) (control plane for disaggregated LLM serving).
 
----
+Also: [distributed-rlhf-trainer](https://github.com/jrajath94/distributed-rlhf-trainer), [orderbook-simulator](https://github.com/jrajath94/orderbook-simulator), [polymarket-hft](https://github.com/jrajath94/polymarket-hft), and more quantitative finance work from my Goldman Sachs years.
 
-Contact: jrajath94@gmail.com
+## Writing
+
+Technical deep-dives at [rajathjohn.com/writing](https://www.rajathjohn.com/writing): Flash Attention in Triton tile by tile, tokenizers from scratch, red-teaming with coverage metrics, benchmarking inference under real traffic, and 20 more.
+
+Contact: rajathjohnbosco@gmail.com
