@@ -26,7 +26,7 @@ The repos here cover LLM evaluation and reliability, GPU inference, and from-scr
 
 | Project | What it is |
 | --- | --- |
-| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer) | BPE and WordPiece tokenizers from scratch. Byte-level encoding for any Unicode input, END_OF_WORD markers for correctness, 144 tests with 92% coverage. |
+| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer) | BPE and WordPiece tokenizers from scratch. Byte-level encoding for any Unicode input, END_OF_WORD markers for correctness, thoroughly unit-tested. |
 | [jax-transformer-impl](https://github.com/jrajath94/jax-transformer-impl) | Transformer in pure functional JAX with MHA, MQA, and GQA, with verified numerical equivalence between the attention variants. |
 | [distributed-kv-store](https://github.com/jrajath94/distributed-kv-store) | Raft consensus from the paper, optimized for ML metadata workloads. |
 
