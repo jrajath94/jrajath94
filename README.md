@@ -36,7 +36,6 @@ Experiment code and reproducibility artifacts for independent research on LLM sy
 
 | Project | Topic |
 | --- | --- |
-| [paper3_failure_planning](https://github.com/jrajath94/paper3_failure_planning) | Failure-aware planning for LLM agents: predicting mid-execution failure from traces |
 | [semcp-conformal-prediction](https://github.com/jrajath94/semcp-conformal-prediction) | Conformal prediction over semantic meaning classes for LLM outputs |
 | [contamination-contagion](https://github.com/jrajath94/contamination-contagion) | How benchmark leakage propagates through fine-tuning and corrupts evals |
 | [stair-tts-scaling-laws](https://github.com/jrajath94/stair-tts-scaling-laws) | Per-problem discrete structure in test-time compute scaling |
