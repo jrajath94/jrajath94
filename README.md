@@ -11,7 +11,7 @@ The repos here cover LLM evaluation and reliability, GPU inference, and from-scr
 | [attention-kernel-cuda](https://github.com/jrajath94/attention-kernel-cuda) | CUDA Flash Attention for non-standard head dimensions. Variable-block tiling eliminates padding waste in kernels that use fixed power-of-2 block sizes. |
 | [triton-inference-kernels](https://github.com/jrajath94/triton-inference-kernels) | Fused softmax and Flash Attention in Triton with online softmax accumulation. Implements O(N) memory complexity instead of O(N²) for attention scores. |
 | [model-quantization-lab](https://github.com/jrajath94/model-quantization-lab) | Apples-to-apples benchmarking of GPTQ, AWQ, and GGML quantization methods with unified evaluation harness and shared calibration data. |
-| [llm-inference-benchmark](https://github.com/jrajath94/llm-inference-benchmark) | vLLM vs TGI vs TensorRT-LLM under realistic bursty traffic, not synthetic constant load. |
+| [llm-inference-benchmark](https://github.com/jrajath94/llm-inference-benchmark) | vLLM vs TGI under realistic bursty Poisson traffic, not synthetic constant load. |
 
 ## Evaluation and reliability
 
@@ -19,14 +19,14 @@ The repos here cover LLM evaluation and reliability, GPU inference, and from-scr
 | --- | --- |
 | [adversarial-prompt-suite](https://github.com/jrajath94/adversarial-prompt-suite) | Red-teaming framework that measures attack-surface coverage instead of counting jailbreaks. 6 attack categories, two-layer classifier (regex heuristics, then an LLM judge for borderline cases). |
 | [fault-tolerant-training](https://github.com/jrajath94/fault-tolerant-training) | Checkpoint manager with atomic writes and automatic recovery for distributed training on spot instances, designed to handle interruptions gracefully. |
-| [llm-eval-suite](https://github.com/jrajath94/llm-eval-suite) | Evaluation framework with LLM-as-judge and custom rubrics, calibrated against human raters. |
+| [llm-eval-suite](https://github.com/jrajath94/llm-eval-suite) | Evaluation framework with LLM-as-judge, custom rubrics, and weighted per-criterion scoring. |
 | [data-pipeline-monitor](https://github.com/jrajath94/data-pipeline-monitor) | ML pipeline observability with statistical drift detection (KS, chi-square, PSI). |
 
 ## From scratch, no dependencies
 
 | Project | What it is |
 | --- | --- |
-| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer) | BPE and WordPiece tokenizers from scratch. Byte-level encoding for any Unicode input, END_OF_WORD markers for correctness, thoroughly unit-tested. |
+| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer) | BPE and WordPiece tokenizers from scratch. Byte-level encoding for any Unicode input, roundtrip-tested against HuggingFace reference outputs. |
 | [jax-transformer-impl](https://github.com/jrajath94/jax-transformer-impl) | Transformer in pure functional JAX with MHA, MQA, and GQA, with verified numerical equivalence between the attention variants. |
 | [distributed-kv-store](https://github.com/jrajath94/distributed-kv-store) | Raft consensus from the paper, optimized for ML metadata workloads. |
 
