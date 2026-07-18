@@ -2,7 +2,15 @@
 
 Lead Software Engineer at JPMorgan Chase (AI platforms, Consumer & Community Banking). Based in New York.
 
-The repos here cover LLM evaluation and reliability, GPU inference, and from-scratch implementations.
+The repos here cover agent reliability, efficient LLM inference, GPU systems, and from-scratch implementations.
+
+## Current systems work
+
+| Project | What is verified |
+| --- | --- |
+| [AgentSLA](https://github.com/jrajath94/agentsla) | Reliability runtime for tool-calling agents with policy gates, numeric verification, budgets, DuckDB traces, and deterministic execution replay for deterministic adapters. 574 tests pass locally. |
+| [DraftForge](https://github.com/jrajath94/draftforge) | EAGLE-3 draft-head training and evaluation pipeline. Three A100 seeds reach 68.7% +/- 1.0% held-out greedy agreement; serving-stack ITL remains explicitly unmeasured pending a weight-schema adapter. 309 tests pass locally. |
+| [GoodputLab](https://github.com/jrajath94/goodputlab) | SLO-aware control plane and benchmark rig for vLLM serving. A 54-cell dedicated-H100 sweep reconciles every cell and retains the negative result that disaggregation improved mean ITL slightly but lost on TTFT and hardware cost for the measured 7B setup. 415 tests pass, with 25 hardware-gated skips. |
 
 ## GPU and inference
 
@@ -41,14 +49,12 @@ Experiment code and reproducibility artifacts for independent research on LLM sy
 | [stair-tts-scaling-laws](https://github.com/jrajath94/stair-tts-scaling-laws) | Per-problem discrete structure in test-time compute scaling |
 | [paper1_orchestrabench](https://github.com/jrajath94/paper1_orchestrabench) | Benchmarking multi-agent LLM topologies across task types |
 
-## In progress
+## Other projects
 
-Early-stage, active as of July 2026: [agentsla](https://github.com/jrajath94/agentsla) (SLO verification for tool-calling agents), [draftforge](https://github.com/jrajath94/draftforge) (EAGLE-3 speculative-decoding draft heads), [goodputlab](https://github.com/jrajath94/goodputlab) (control plane for disaggregated LLM serving).
-
-Also: [distributed-rlhf-trainer](https://github.com/jrajath94/distributed-rlhf-trainer), [orderbook-simulator](https://github.com/jrajath94/orderbook-simulator), [polymarket-hft](https://github.com/jrajath94/polymarket-hft), and more quantitative finance work from my Goldman Sachs years.
+Also: [distributed-rlhf-trainer](https://github.com/jrajath94/distributed-rlhf-trainer), [orderbook-simulator](https://github.com/jrajath94/orderbook-simulator), and additional quantitative systems implementations.
 
 ## Writing
 
-Technical deep-dives at [rajathjohn.com/writing](https://www.rajathjohn.com/writing): Flash Attention in Triton tile by tile, tokenizers from scratch, red-teaming with coverage metrics, benchmarking inference under real traffic, and more.
+Technical deep-dives at [rajathjohn.com/writing](https://www.rajathjohn.com/writing), including new articles on reliability contracts for agents, measured EAGLE-3 training, and the regime where disaggregated serving did not win.
 
 Contact: rajathjohnbosco@gmail.com
