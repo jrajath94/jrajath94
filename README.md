@@ -26,8 +26,9 @@ Other public implementations cover Triton and CUDA attention kernels, functional
 
 ## Technical scope
 
-- Production experience: Python, SQL, AWS, Kafka, retrieval systems, guarded text-to-SQL, developer platforms, distributed services, and React at JPMorgan Chase and Goldman Sachs.
-- Independent evidence: agent reliability, LLM evaluation, speculative decoding, inference benchmarking, PyTorch, JAX, CUDA, Triton, vLLM, Kubernetes, Docker, DuckDB, Prometheus, and Grafana.
+- Employer-backed engineering: Python, SQL, Java, TypeScript, AWS, Kafka, distributed systems, developer platforms, retrieval systems, guarded text-to-SQL, and React at JPMorgan Chase and Goldman Sachs.
+- Independent ML systems: AI agents and reliability, large language model evaluation, RAG, speculative decoding, inference benchmarking, PyTorch, JAX, CUDA, Triton, and vLLM.
+- Independent systems tooling: API development, Kubernetes, Docker, FastAPI, DuckDB, Prometheus, and Grafana.
 
 ## Writing
 
