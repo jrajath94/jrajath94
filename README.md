@@ -1,60 +1,38 @@
 # Rajath John Bosco
 
-Lead Software Engineer at JPMorgan Chase (AI platforms, Consumer & Community Banking). Based in New York.
+Vice President and Lead Software Engineer at JPMorgan Chase in New York. I build production LLM, retrieval, and analytics systems in regulated environments. Previously, I was a Quantitative Developer at Goldman Sachs, a Product Security engineering intern at NVIDIA, and a Software Engineer at Visa.
 
-The repos here cover agent reliability, efficient LLM inference, GPU systems, and from-scratch implementations.
+My independent, AI-assisted, unpublished systems work focuses on agent reliability, LLM evaluation, efficient inference, and distributed serving. I publish measured results, test status, and explicit unmeasured boundaries.
 
 ## Current systems work
 
-| Project | What is verified |
+| Project | Evidence available in the repository |
 | --- | --- |
-| [AgentSLA](https://github.com/jrajath94/agentsla) | Reliability runtime for tool-calling agents with policy gates, numeric verification, budgets, DuckDB traces, and deterministic execution replay for deterministic adapters. 574 tests pass locally. |
-| [DraftForge](https://github.com/jrajath94/draftforge) | EAGLE-3 draft-head training and evaluation pipeline. Three A100 seeds reach 68.7% +/- 1.0% held-out greedy agreement; serving-stack ITL remains explicitly unmeasured pending a weight-schema adapter. 309 tests pass locally. |
-| [GoodputLab](https://github.com/jrajath94/goodputlab) | SLO-aware control plane and benchmark rig for vLLM serving. A 54-cell dedicated-H100 sweep reconciles every cell and retains the negative result that disaggregation improved mean ITL slightly but lost on TTFT and hardware cost for the measured 7B setup. 415 tests pass, with 25 hardware-gated skips. |
+| [AgentSLA](https://github.com/jrajath94/agentsla) | Reliability runtime for tool-calling agents with policy gates, numeric verification, execution budgets, append-only traces, and deterministic replay for deterministic adapters. 574 tests pass locally as of July 18, 2026. |
+| [DraftForge](https://github.com/jrajath94/draftforge) | EAGLE-3 draft-head training and evaluation pipeline. Three A100 seeds measured 68.7% +/- 1.0% held-out greedy agreement. Serving inter-token latency remains explicitly unmeasured pending a weight-schema adapter. 309 tests pass locally as of July 18, 2026. |
+| [GoodputLab](https://github.com/jrajath94/goodputlab) | SLO-aware control plane and benchmark rig for vLLM. A 54-cell dedicated-H100 sweep reconciled every cell and retained the negative result that disaggregation slightly improved mean inter-token latency but lost on time to first token and hardware cost for the measured 7B setup. 415 tests pass locally, with 25 hardware-gated skips, as of July 18, 2026. |
 
-## GPU and inference
+## Additional verified implementations
 
-| Project | What it is |
+| Project | Scope |
 | --- | --- |
-| [attention-kernel-cuda](https://github.com/jrajath94/attention-kernel-cuda) | CUDA Flash Attention for non-standard head dimensions. Variable-block tiling eliminates padding waste in kernels that use fixed power-of-2 block sizes. |
-| [triton-inference-kernels](https://github.com/jrajath94/triton-inference-kernels) | Fused softmax and Flash Attention in Triton with online softmax accumulation. Implements O(N) memory complexity instead of O(N²) for attention scores. |
-| [model-quantization-lab](https://github.com/jrajath94/model-quantization-lab) | Apples-to-apples benchmarking of GPTQ, AWQ, and GGML quantization methods with unified evaluation harness and shared calibration data. |
-| [llm-inference-benchmark](https://github.com/jrajath94/llm-inference-benchmark) | vLLM vs TGI under realistic bursty Poisson traffic, not synthetic constant load. |
+| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer) | BPE and WordPiece implementations with 144 locally passing tests. |
+| [adversarial-prompt-suite](https://github.com/jrajath94/adversarial-prompt-suite) | Prompt-injection and jailbreak evaluation across six attack categories with 93 locally passing tests. |
+| [distributed-kv-store](https://github.com/jrajath94/distributed-kv-store) | Distributed key-value store focused on storage, replication, and recovery behavior, with 79 locally passing tests. |
 
-## Evaluation and reliability
+Other public implementations cover Triton and CUDA attention kernels, functional JAX transformers, tokenization, checkpoint recovery, model evaluation, and quantitative systems. Their repositories should be treated as implementation evidence; hardware-dependent performance claims require the environment described in each project.
 
-| Project | What it is |
-| --- | --- |
-| [adversarial-prompt-suite](https://github.com/jrajath94/adversarial-prompt-suite) | Red-teaming framework that measures attack-surface coverage instead of counting jailbreaks. 6 attack categories, two-layer classifier (regex heuristics, then an LLM judge for borderline cases). |
-| [fault-tolerant-training](https://github.com/jrajath94/fault-tolerant-training) | Checkpoint manager with atomic writes and automatic recovery for distributed training on spot instances, designed to handle interruptions gracefully. |
-| [llm-eval-suite](https://github.com/jrajath94/llm-eval-suite) | Evaluation framework with LLM-as-judge, custom rubrics, and weighted per-criterion scoring. |
-| [data-pipeline-monitor](https://github.com/jrajath94/data-pipeline-monitor) | ML pipeline observability with statistical drift detection (KS, chi-square, PSI). |
+## Technical scope
 
-## From scratch, no dependencies
-
-| Project | What it is |
-| --- | --- |
-| [bpe-tokenizer](https://github.com/jrajath94/bpe-tokenizer) | BPE and WordPiece tokenizers from scratch. Byte-level encoding for any Unicode input, roundtrip-tested against HuggingFace reference outputs. |
-| [jax-transformer-impl](https://github.com/jrajath94/jax-transformer-impl) | Transformer in pure functional JAX with MHA, MQA, and GQA, with verified numerical equivalence between the attention variants. |
-| [distributed-kv-store](https://github.com/jrajath94/distributed-kv-store) | Raft consensus from the paper, optimized for ML metadata workloads. |
-
-## Research code
-
-Experiment code and reproducibility artifacts for independent research on LLM systems.
-
-| Project | Topic |
-| --- | --- |
-| [semcp-conformal-prediction](https://github.com/jrajath94/semcp-conformal-prediction) | Conformal prediction over semantic meaning classes for LLM outputs |
-| [contamination-contagion](https://github.com/jrajath94/contamination-contagion) | How benchmark leakage propagates through fine-tuning and corrupts evals |
-| [stair-tts-scaling-laws](https://github.com/jrajath94/stair-tts-scaling-laws) | Per-problem discrete structure in test-time compute scaling |
-| [paper1_orchestrabench](https://github.com/jrajath94/paper1_orchestrabench) | Benchmarking multi-agent LLM topologies across task types |
-
-## Other projects
-
-Also: [distributed-rlhf-trainer](https://github.com/jrajath94/distributed-rlhf-trainer), [orderbook-simulator](https://github.com/jrajath94/orderbook-simulator), and additional quantitative systems implementations.
+- Production experience: Python, SQL, AWS, Kafka, retrieval systems, guarded text-to-SQL, developer platforms, distributed services, and React at JPMorgan Chase and Goldman Sachs.
+- Independent evidence: agent reliability, LLM evaluation, speculative decoding, inference benchmarking, PyTorch, JAX, CUDA, Triton, vLLM, Kubernetes, Docker, DuckDB, Prometheus, and Grafana.
 
 ## Writing
 
-Technical deep-dives at [rajathjohn.com/writing](https://www.rajathjohn.com/writing), including new articles on reliability contracts for agents, measured EAGLE-3 training, and the regime where disaggregated serving did not win.
+- [Reliability contracts for tool-calling agents](https://www.rajathjohn.com/writing/agentsla-reliability-contracts-for-tool-calling-agents)
+- [Measuring EAGLE-3 before claiming a speedup](https://www.rajathjohn.com/writing/draftforge-measuring-eagle3-before-claiming-speedups)
+- [When disaggregated LLM serving does not win](https://www.rajathjohn.com/writing/goodputlab-when-disaggregated-serving-does-not-win)
+
+More at [rajathjohn.com/writing](https://www.rajathjohn.com/writing).
 
 Contact: rajathjohnbosco@gmail.com
