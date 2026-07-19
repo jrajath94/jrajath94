@@ -1,6 +1,8 @@
 # Rajath John Bosco
 
-Vice President and Lead Software Engineer at JPMorgan Chase in New York. I build production LLM, retrieval, and analytics systems in regulated environments. Previously, I was a Quantitative Developer at Goldman Sachs, a Product Security engineering intern at NVIDIA, and a Software Engineer at Visa.
+Vice President, Lead Software Engineer at JPMorgan Chase (May 2023 - present), based in New York. I build production LLM, retrieval, and analytics systems in regulated environments.
+
+Earlier roles: Quantitative Developer, Global Markets at Goldman Sachs (Oct 2021 - Apr 2023); Software Engineer Intern, Product Security at NVIDIA (May 2020 - Aug 2020); and Associate Software Engineer, promoted to Software Engineer at Visa (Jul 2016 - Aug 2019).
 
 My independent, AI-assisted, unpublished systems work focuses on agent reliability, LLM evaluation, efficient inference, and distributed serving. I publish measured results, test status, and explicit unmeasured boundaries.
 
