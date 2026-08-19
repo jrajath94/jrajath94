@@ -4,15 +4,15 @@ Vice President, Lead Software Engineer at JPMorgan Chase (May 2023 - present), b
 
 Earlier roles: Quantitative Developer, Global Markets at Goldman Sachs (Oct 2021 - Apr 2023); Software Engineer Intern, Product Security at NVIDIA (May 2020 - Aug 2020); and Associate Software Engineer, promoted to Software Engineer at Visa (Jul 2016 - Aug 2019).
 
-My independent, AI-assisted, unpublished systems work focuses on agent reliability, LLM evaluation, efficient inference, and distributed serving. I publish measured results, test status, and explicit unmeasured boundaries.
+My independent, AI-assisted, unpublished systems work focuses on agent reliability, LLM evaluation, efficient inference, and distributed serving. I publish measured results, test status, and explicit unmeasured boundaries; repository READMEs are the source of truth for each project's current status.
 
 ## Current systems work
 
 | Project | Evidence available in the repository |
 | --- | --- |
-| [AgentSLA](https://github.com/jrajath94/agentsla) | Reliability runtime for tool-calling agents with policy gates, numeric verification, execution budgets, append-only traces, and deterministic replay for deterministic adapters. 574 tests pass locally as of July 18, 2026. |
-| [DraftForge](https://github.com/jrajath94/draftforge) | EAGLE-3 draft-head training and evaluation pipeline. Three A100 seeds measured 68.7% +/- 1.0% held-out greedy agreement. Serving inter-token latency remains explicitly unmeasured pending a weight-schema adapter. 309 tests pass locally as of July 18, 2026. |
-| [GoodputLab](https://github.com/jrajath94/goodputlab) | SLO-aware control plane and benchmark rig for vLLM. A 54-cell dedicated-H100 sweep reconciled every cell and retained the negative result that disaggregation slightly improved mean inter-token latency but lost on time to first token and hardware cost for the measured 7B setup. 415 tests pass locally, with 25 hardware-gated skips, as of July 18, 2026. |
+| [AgentSLA](https://github.com/jrajath94/agentsla) | Reliability runtime for tool-calling agents with policy gates, numeric verification, execution budgets, append-only traces, and deterministic replay for deterministic adapters. |
+| [DraftForge](https://github.com/jrajath94/draftforge) | EAGLE-3 draft-head training and evaluation pipeline. Three A100 seeds measured 68.7% +/- 1.0% held-out greedy agreement; serving inter-token latency remains explicitly unmeasured pending a weight-schema adapter. |
+| [GoodputLab](https://github.com/jrajath94/goodputlab) | SLO-aware control plane and benchmark rig for vLLM. A 54-cell dedicated-H100 sweep retained the negative result that disaggregation slightly improved mean inter-token latency but lost on time to first token and hardware cost for the measured 7B setup. |
 
 ## Additional verified implementations
 
@@ -23,6 +23,12 @@ My independent, AI-assisted, unpublished systems work focuses on agent reliabili
 | [distributed-kv-store](https://github.com/jrajath94/distributed-kv-store) | Distributed key-value store focused on storage, replication, and recovery behavior, with 79 locally passing tests. |
 
 Other public implementations cover Triton and CUDA attention kernels, functional JAX transformers, tokenization, checkpoint recovery, model evaluation, and quantitative systems. Their repositories should be treated as implementation evidence; hardware-dependent performance claims require the environment described in each project.
+
+## Repository index
+
+- [Adversarial Prompt Suite](https://github.com/jrajath94/adversarial-prompt-suite) · [BPE Tokenizer](https://github.com/jrajath94/bpe-tokenizer) · [Distributed KV Store](https://github.com/jrajath94/distributed-kv-store)
+- [JAX Transformer](https://github.com/jrajath94/jax-transformer-impl) · [Triton Inference Kernels](https://github.com/jrajath94/triton-inference-kernels) · [Orderbook Simulator](https://github.com/jrajath94/orderbook-simulator)
+- [Attention Kernel CUDA](https://github.com/jrajath94/attention-kernel-cuda) · [Fault-Tolerant Training](https://github.com/jrajath94/fault-tolerant-training) · [Model Quantization Lab](https://github.com/jrajath94/model-quantization-lab)
 
 ## Technical scope
 
